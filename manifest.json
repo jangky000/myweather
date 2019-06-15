@@ -1,0 +1,15 @@
+{
+  "name": "myweather",
+  "version": "1.0",
+  "description": "Personalized Weather Application",
+  "permissions": ["storage", "geolocation"],
+  "background": {
+    "scripts": ["data.js", "background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "manifest_version": 2
+}
