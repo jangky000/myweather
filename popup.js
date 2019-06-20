@@ -2,10 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-// 온도 생성
-const infoTemp = document.querySelector('.info_temperature');
-infoTemp.innerHTML = `${data.temp}℃`;
+const getCity = () => {
+  const newDiv = document.createElement('div');
+  const newContent = document.createTextNode(weatherData.city);
+  const divBackground = document.querySelector('.background');
 
-// 날씨 상태 생성
-const infoState = document.querySelector('.ico_weather');
-infoState.style.backgroundImage = `url(/images/${data.state}128.png)`;
+  newDiv.appendChild(newContent);
+  divBackground.appendChild(newDiv);
+};
+setTimeout(() => {
+  getWeather();
+  getCity(weatherData.city);  
+}, 2000);

@@ -2,13 +2,14 @@
   "name": "myweather",
   "version": "1.0",
   "description": "Personalized Weather Application",
-  "permissions": ["storage", "geolocation"],
+  "permissions": ["activeTab", "storage", "geolocation"],
   "background": {
-    "scripts": ["data.js", "background.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "images/sunny16.png"
   },
   "options_page": "options.html",
   "manifest_version": 2
