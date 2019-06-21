@@ -8,7 +8,7 @@ const weatherData = {};
 // 앱 아이콘 뱃지 생성 (온도)
 const getTemp = (temp) => {
   window.chrome.browserAction.setBadgeText({ text: temp });
-  window.chrome.browserAction.setBadgeBackgroundColor({ color: '#FF6F61' });
+  window.chrome.browserAction.setBadgeBackgroundColor({ color: '#000' });
 };
 
 // 앱 아이콘 이미지 생성 (날씨 상태)
@@ -21,6 +21,7 @@ const getState = (id) => {
   } else if (id < 800) {
     state = 'partlycloudy';
   }
+  state = 'rain';
 
   window.chrome.browserAction.setIcon({
     path: {
@@ -42,7 +43,7 @@ const getState = (id) => {
   }
 
   // 현재시간 가져오기
-  if (divStateText !== null && (weatherData.hours < 6 || weatherData.hours >= 18)) {
+  if (divStateText !== null && (weatherData.hours < 7 || weatherData.hours >= 19)) {
     divStateText.style.color = '#fff';
     document.body.style.backgroundColor = '#000';
   }
@@ -63,7 +64,7 @@ const setWeather = () => {
 
     // weatherData.city = res.name;
 
-    getTemp(weatherData.temp);
+    // getTemp(weatherData.temp);
     getState(weatherData.state);
   }
 
