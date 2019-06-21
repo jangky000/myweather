@@ -1,6 +1,6 @@
 # myweather
 - No branches other than master
-- Never $ git pull, never.
+- Never ```$ git``` pull, never.
 - Always $ git fetch first, and then $ git status.
     - If git tells you that you can fast-forward,
         - $ git merge.
